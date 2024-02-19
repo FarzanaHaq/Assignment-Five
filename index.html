@@ -340,7 +340,7 @@
                             </div>
                             <input type="text" placeholder="Enter your email id" class="input input-bordered w-[400px]" />
                           </label>
-                          <button disabled id="next-btn" class="btn w-[400px] bg-[#1DD100] rounded-lg text-white mt-7 mb-6">Next</button>
+                          <button disabled onclick="my_modal_4.showModal()"  id="next-btn" class="btn w-[400px] bg-[#1DD100] rounded-lg text-white mt-7 mb-6">Next</button>
                     </div>
                     <div class="flex justify-between mt-7">
                         <h1 class="text-[#03071299] underline" >Terms and Condition</h1>
@@ -366,6 +366,31 @@
                     </div>
                 </div>
             </section>
+        </section>
+
+        <!--modal-->
+        <section>
+            <!-- Open the modal using ID.showModal() method -->
+<!-- You can open the modal using ID.showModal() method -->
+<button hidden class="btn" onclick="my_modal_4.showModal()">open modal</button>
+<dialog id="my_modal_4" class="modal">
+  <div class="modal-box w-11/12 max-w-5xl">
+    <div class="space-y-6 bg-white  mx-auto p-10">
+        <div class="flex justify-center">
+            <img src="images/success.png" alt="">
+        </div>
+        <h1 class="text-center text-2xl font-bold text-[#27AE60]">SUCCESS</h1>
+        <p class="text-center font-medium text-xl">Thank you for Booking Our Bus Seats. <br> are working hard to find the best service and deals for you.</p>
+        <p class="text-center font-light text-xl text-[#4A4A4A]">Shortly you will find a confirmation in your email.</p>
+        <div class="flex justify-center">
+            <button class="btn bg-[#27AE60] text-white rounded-3xl w-[300px] font-medium text-xl">Continue</button>
+        </div>
+    </div>
+    <div class="modal-action">
+      
+    </div>
+  </div>
+</dialog>
         </section>
     </main>
     <footer></footer>

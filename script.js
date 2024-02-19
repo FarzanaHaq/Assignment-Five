@@ -96,14 +96,14 @@ const ticketButton = document.querySelectorAll("h4");
  })
  
  
- document.getElementById("next-btn").addEventListener("click", function () {
+ /*document.getElementById("next-btn").addEventListener("click", function () {
     const thankYou = document.getElementById("thank-you");
     const mainSection = document.getElementById("main-section");
     mainSection.classList.add("hidden")
     thankYou.classList.remove("hidden");
     const headerSection = document.getElementById("header-section");
     headerSection.classList.add("hidden")
- })
+ })*/
  
  document.getElementById("apply-button").addEventListener("click", function () {
    const divHide = document.getElementById("input-section");
