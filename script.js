@@ -16,6 +16,7 @@ const ticketButton = document.querySelectorAll("h4");
         
         
         //change the color
+        
         item.classList.add("bg-lime-400");
         
         //put it inside the div
