@@ -5,13 +5,20 @@ let totalPriceCount = 0;
 
 const ticketButton = document.querySelectorAll("h4");
  for (const item of ticketButton) {
-    item.addEventListener("click" , function() {
+    item.addEventListener("click" , function handleClick() {
         //get the value
         const title = item.innerText;
         const getPrice = document.getElementById("price-value");
         const price = parseFloat(getPrice.innerText);
+        //can be clicked only once
+        item.removeEventListener("click", handleClick);
+        
+        if ((titleCount - 1) === 4) {
+         item.removeEventListener("click", handleClick);
+        }
+        
         //change the color
-        item.classList.add("bg-lime-500");
+        item.classList.add("bg-lime-400");
         
         //put it inside the div
         const titleContainer = document.getElementById("value-seat");
@@ -35,6 +42,9 @@ const ticketButton = document.querySelectorAll("h4");
         document.getElementById("seat-count").innerText = titleCount - 1 ;
         document.getElementById("seat-left").innerText = 40 - (titleCount - 1) ;
         
+        if (titleCount-1 > 4) {
+         alert("You can only buy four ticket")
+        }
         
     })
  }
@@ -76,12 +86,13 @@ const ticketButton = document.querySelectorAll("h4");
  document.getElementById("phone-number").addEventListener("keyup", function(event) {
     const text = event.target.value;
     const textTwo = isNaN(text);
+    const OneTicket = titleCount - 1;
     
     const nextButton = document.getElementById("next-btn")
-    if ( textTwo === false) {
+    if ( textTwo === false && OneTicket >= 1) {
         nextButton.removeAttribute("disabled");
     } else {
-        alert("please enter number")
+        alert("Please enter your number and buy at least one ticket")
     }
  })
  
