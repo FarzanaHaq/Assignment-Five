@@ -5,7 +5,11 @@ let totalPriceCount = 0;
 
 const ticketButton = document.querySelectorAll("h4");
  for (const item of ticketButton) {
-    item.addEventListener("click" , function handleClick() {
+    if (titleCount <= 4 ) {
+      item.addEventListener("click", handleClick);
+    }
+
+    function handleClick() {
         //get the value
         const title = item.innerText;
         const getPrice = document.getElementById("price-value");
@@ -40,12 +44,12 @@ const ticketButton = document.querySelectorAll("h4");
         document.getElementById("total-price").innerText = totalPriceCount;
         document.getElementById("seat-count").innerText = titleCount - 1 ;
         document.getElementById("seat-left").innerText = 40 - (titleCount - 1) ;
-        
+    
         if (titleCount-1 > 4) {
          alert("You can only buy four ticket")
         }
         
-    })
+    }
  }
 
 
@@ -64,7 +68,7 @@ const ticketButton = document.querySelectorAll("h4");
              document.getElementById("grand-total-price").innerText = discountAmount.toFixed(2);
              document.getElementById("apply-input").value = "";
 
-            } else if (couponCodeTwo === "Coupon20"){
+            } else if (couponCodeTwo === "Couple20"){
                const discountTwo =  totalPriceCount * 0.2;
              const discountAmountTwo = totalPriceCount - discountTwo;
              document.getElementById("grand-total-price").innerText = discountAmountTwo.toFixed(2);
@@ -95,15 +99,6 @@ const ticketButton = document.querySelectorAll("h4");
     }
  })
  
- 
- /*document.getElementById("next-btn").addEventListener("click", function () {
-    const thankYou = document.getElementById("thank-you");
-    const mainSection = document.getElementById("main-section");
-    mainSection.classList.add("hidden")
-    thankYou.classList.remove("hidden");
-    const headerSection = document.getElementById("header-section");
-    headerSection.classList.add("hidden")
- })*/
  
  document.getElementById("apply-button").addEventListener("click", function () {
    const divHide = document.getElementById("input-section");
