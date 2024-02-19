@@ -10,12 +10,10 @@ const ticketButton = document.querySelectorAll("h4");
         const title = item.innerText;
         const getPrice = document.getElementById("price-value");
         const price = parseFloat(getPrice.innerText);
+        
         //can be clicked only once
         item.removeEventListener("click", handleClick);
         
-        if ((titleCount - 1) === 4) {
-         item.removeEventListener("click", handleClick);
-        }
         
         //change the color
         item.classList.add("bg-lime-400");
@@ -106,6 +104,9 @@ const ticketButton = document.querySelectorAll("h4");
     headerSection.classList.add("hidden")
  })
  
- 
+ document.getElementById("apply-button").addEventListener("click", function () {
+   const divHide = document.getElementById("input-section");
+   divHide.classList.add("hidden")
+})
 
  
